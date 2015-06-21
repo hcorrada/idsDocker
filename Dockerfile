@@ -18,7 +18,11 @@ RUN installGithub.r \
 
 # financial data package
 RUN install2.r --error \
-    quantmod
+    quantmod \
+    swirl
+
+    
+   
     
     
     

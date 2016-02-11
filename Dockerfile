@@ -1,7 +1,6 @@
 FROM rocker/ropensci
 MAINTAINER Hector Corrada Bravo <hcorrada@gmail.com>
 
-
 # install datasets from ISL
 RUN install2.r --error \
     ISLR \
@@ -22,7 +21,15 @@ RUN install2.r --error \
     swirl
 
     
-   
+ # make a directory for tidy and wrangling unit
+RUN mkdir -p /home/ids_materials/tidy_unit && chown -R rstudio /home/ids_materials 
+
+# download the datasets for the tidy unit
+RUN cd /home/ids_materials/tidy_unit && \
+  git clone https://github.com/hadley/tidyr.git && \
+  mv tidyr/vignettes example_data && \ 
+  rm -rf tidyr
+
     
     
     

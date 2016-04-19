@@ -47,3 +47,7 @@ RUN mkdir -p /home/ids_materials/lahman_sqlite \
   && wget -O /home/ids_materials/lahman_sqlite/readme2014.txt http://seanlahman.com/files/database/readme2014.txt \
   && git clone https://github.com/jknecht/baseball-archive-sqlite.git /tmp/lahman_sqlite \
   && cp /tmp/lahman_sqlite/lahman2014.sqlite /home/ids_materials/lahman_sqlite
+
+# copy genotype data into data directory
+COPY example_data/geno_data.rda /home/ids_materials/
+
